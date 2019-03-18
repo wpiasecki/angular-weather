@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OpenWeatherMapService } from '../open-weather-map.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 const ENTER_KEYCODE = 13;
 
@@ -13,21 +14,31 @@ export class WeatherComponent implements OnInit {
   weatherResult
   searchText = ''
   
-  constructor(private openWeatherMapService: OpenWeatherMapService) {
+  constructor(
+    private openWeatherMapService: OpenWeatherMapService,
+    private router: Router,
+    private route: ActivatedRoute) {
   }
 
   ngOnInit() {
+    const query = this.route.snapshot.queryParams.q;
+    if (query) { 
+      this.searchText = query;
+      this.search(query);
+    }
   }
   
   searchOnEnter(event) {
-    console.log('search on enter', this.searchText, event);
     if (event.keyCode == ENTER_KEYCODE && this.searchText && this.searchText.length >= 3) {
-      this.openWeatherMapService.searchCities(this.searchText)
-        .subscribe(result => {
-          console.log('owm result', result);
-          this.weatherResult = result.list;
-        });
+      this.search(this.searchText);
     }
+  }
+  
+  search(searchText) {
+    this.router.navigate(['/search'], { queryParams: { q: searchText } });
+      
+    this.openWeatherMapService.searchCities(searchText)
+      .subscribe( (result: any) => this.weatherResult = result.list );
   }
 
 }
