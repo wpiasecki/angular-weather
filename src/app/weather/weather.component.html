@@ -1,6 +1,6 @@
 <div class="container-fluid h-100 d-flex flex-column main-container">
-	<div class="row">
-		<div class="header col">
+	<div class="header row">
+		<div class="col-xl-4 col-lg-6 col-md-8 col-sm-12">
 			<div class="search-input">
 				<p class="title">Weather in your city</p>
 			  <input 
@@ -12,32 +12,32 @@
 		</div>
 		
 		<div class="result row">
-		    <div class="city-card-container col-lg-8 col-xl-6 col-sm-1 col-md-1">
+		    <div class="city-card-container col-xl-6 col-lg-8 col-md-6 col-sm-12">
 		    
 		      <div 
 		        class="city-card row" 
 		        *ngFor="let result of weatherResult"
 		        (click)="toDetails(result)">
-		        <div class="temperature col-4">
+		        <div class="temperature col-lg-4">
 		          {{ result.main.temp }}°C
 	          </div>
-		        <div class="city-data col-5">
+		        <div class="city-data col-lg-5">
 		          <div class="city-name">
 		            {{ result.name }}, {{ result.sys.country }}
 		            <img src="http://openweathermap.org/images/flags/{{ result.sys.country.toLowerCase() }}.png">
 		          </div>
 		          <div class="temp">
-		            <div>
-		              <div class="temp-title col-4">Máx</div>
-		              <span class="max-temp">{{ result.main.temp_max }}</span>
+		            <div class="row">
+		              <div class="temp-title col-lg-4 col-sm-3">Máx</div>
+		              <div class="max-temp col-sm-3">{{ result.main.temp_max }}</div>
 		            </div>
-		            <div>
-		              <div class="temp-title col-4">Min</div>
-		              <span class="min-temp">{{ result.main.temp_min }}</span>
+		            <div class="row">
+		              <div class="temp-title col-lg-4 col-sm-3">Min</div>
+		              <div class="min-temp col-sm-3">{{ result.main.temp_min }}</div>
 	              </div>
 		          </div>
 	          </div>
-		        <div class="condition col-3">
+		        <div class="condition col-lg-3">
 		          <div><img src="http://openweathermap.org/img/w/{{ result.weather[0].icon }}.png"></div>
 		          <div>{{ result.weather[0].description }}</div>
 	          </div>
