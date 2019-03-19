@@ -1,6 +1,6 @@
 <div class="container-fluid h-100 d-flex flex-column main-container">
 	<div class="row header">
-    <div class="back-button" onclick="window.history.back()"><</div>
+    <div class="back-button ion-android-arrow-back" onclick="window.history.back()"></div>
 		<div class="col-xl-4 col-lg-6 col-md-8 col-sm-12">
 			<div class="search-input">
 			  <input 
@@ -12,18 +12,18 @@
 		</div>
 	</div>
 	
-	<div class="row city-name">
+	<div class="row city-name" *ngIf="cityWeather">
 	  <div class="col">
 	    <div class="name">
 	      Weather in {{ cityWeather.name }}, {{ cityWeather.sys.country }}
 	    </div>
 	    <div class="datetime">
-	      {{ cityWeather.dt }}
+	      {{ cityWeather.curr_dt.format('H:m MMM D') }}
 	    </div>
     </div>
 	</div>
 	
-	<div class="row main-forecast col-xl-7 col-lg-9 col-md-10 col-sm-12">
+	<div class="row main-forecast col-xl-7 col-lg-9 col-md-10 col-sm-12" *ngIf="cityWeather">
 	  <div class="col">
 	    <div class="row main-weather">
 	      <div class="temperature-weather col-lg-4 col-sm-12">
@@ -46,11 +46,11 @@
           </div>
           <div class="row">
 	          <div class="col-4">Sunrise</div>
-	          <div>{{ cityWeather.sys.sunrise_dt.getHours() }}:{{ cityWeather.sys.sunrise_dt.getMinutes() }}</div>
+	          <div>{{ cityWeather.sys.sunrise_dt.format('HH:mm') }}</div>
           </div>
           <div class="row">
 	          <div class="col-4">Sunset</div>
-	          <div>{{ cityWeather.sys.sunset_dt.getHours() }}:{{ cityWeather.sys.sunset_dt.getMinutes() }}</div>
+	          <div>{{ cityWeather.sys.sunset_dt.format('HH:mm') }}</div>
           </div>
 	      </div>
 	    </div>
@@ -60,11 +60,11 @@
         <span class="details">every 3 hours</span>
       </div>
 	    
-	    <div class="forecast-wrapper">
+	    <div class="forecast-wrapper" *ngIf="cityForecast">
 	      <div class="forecast row" *ngFor="let forecast of cityForecast.list">
 	        <div class="date col-lg-3 col-md-3 col-sm-6">
-	          <div class="day">{{ forecast.dt_day }}</div>
-	          <div class="hour">{{ forecast.dt_hour }}</div>
+	          <div class="day">{{ forecast.dt_day.format('ddd W MMM') }}</div>
+	          <div class="hour">{{ forecast.dt_day.format('HH:mm') }}</div>
 	        </div>
 	        <div class="condition col-lg-5 col-md-3 col-sm-6">
 	          <img src="http://openweathermap.org/img/w/{{ forecast.weather[0].icon }}.png">
