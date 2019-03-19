@@ -37,8 +37,12 @@ export class WeatherDetailsComponent implements OnInit {
   
   searchOnEnter(event) {
     if (event.keyCode == ENTER_KEYCODE) {
-      this.router.navigate(['/search'], { queryParams: { q: this.searchText } });
+      this.search();
     }
+  }
+  
+  search() {
+    this.router.navigate(['/search'], { queryParams: { q: this.searchText } });
   }
   
 }

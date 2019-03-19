@@ -30,14 +30,14 @@ export class WeatherComponent implements OnInit {
   
   searchOnEnter(event) {
     if (event.keyCode == ENTER_KEYCODE && this.searchText && this.searchText.length >= 3) {
-      this.search(this.searchText);
+      this.search();
     }
   }
   
-  search(searchText) {
-    this.router.navigate(['/search'], { queryParams: { q: searchText } });
+  search() {
+    this.router.navigate(['/search'], { queryParams: { q: this.searchText } });
       
-    this.openWeatherMapService.searchCities(searchText)
+    this.openWeatherMapService.searchCities(this.searchText)
       .subscribe( (result: any) => this.weatherResult = result.list );
   }
   
