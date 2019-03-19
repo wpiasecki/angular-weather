@@ -16,6 +16,6 @@ Projeto para pesquisa de cidades, clima e previsão do tempo na base OpenWeather
 
 4) Colunas do Bootstrap para telas menores
 
-![Tela menor](https://raw.githubusercontent.com/wpiasecki/angular-weather/master/prints/4responsive.png)
+<img src="https://raw.githubusercontent.com/wpiasecki/angular-weather/master/prints/4responsive.png" width="40%">
 
 Projeto gerado com [Angular CLI](https://github.com/angular/angular-cli) version 7.3.6.
