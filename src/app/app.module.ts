@@ -5,8 +5,6 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { WeatherComponent } from './weather/weather.component';
-import { WeatherSearchComponent } from './weather-search/weather-search.component';
-import { WeatherResultComponent } from './weather-result/weather-result.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { WeatherDetailsComponent } from './weather-details/weather-details.component';
@@ -15,8 +13,6 @@ import { WeatherDetailsComponent } from './weather-details/weather-details.compo
   declarations: [
     AppComponent,
     WeatherComponent,
-    WeatherSearchComponent,
-    WeatherResultComponent,
     WeatherDetailsComponent
   ],
   imports: [

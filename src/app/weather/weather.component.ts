@@ -24,7 +24,7 @@ export class WeatherComponent implements OnInit {
     const query = this.route.snapshot.queryParams.q;
     if (query) { 
       this.searchText = query;
-      this.search(query);
+      this.search();
     }
   }
   
