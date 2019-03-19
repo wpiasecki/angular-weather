@@ -23,29 +23,72 @@ div.city-name
   div.datetime
     font-size: 14px;
     font-style: italic;
-    color: #3c3c3c;
     opacity: 0.5;
-
-div.main-weather
-  display: flex;
-  
-  div.day-weather-data
-    div 
-      margin-bottom: 1px solid #aaa;
 
 div.main-forecast
   background-color: white;
   border-radius: 4px;
+  padding: 26px;
   margin: auto;
   
-  div.forecast 
+  div.main-weather
+    padding: 1em;
+    div.day-weather-data
+      div.row 
+        border-bottom: 1px solid #ccc;
+        font-size: 14px;
+        margin-left: 2em;
+        padding: 12px 0px;
+        font-weight: bold;
+        div 
+          padding-left: 0px;
+          
     
-    div.date
-      div.day
-      div.hour
-    
-    div.condition
-      font-size: 14px;
+    div.temperature-weather
+      border: 2px solid #f0f0f0
+      padding: 0
+      
+      div.temperature
+        line-height: 120px;
+        
+      div.current-condition
+        text-align: center;
+        padding: 10px;
+        opacity: 0.75;
+        font-style: italic;
+        font-size: 14px;
+
+  div.forecast-title
+    margin-top: 32px;
+    margin-bottom: 16px;
+    span.main
+      font-size: 24px;
+      margin-right: 10px;
+    span.details
+      font-size: 12px;
       font-style: italic;
-    
+      opacity: 0.5;
+
+  div.forecast-wrapper
+    > div:first-child
+      background-color: #f0f0f0
+      border-left: 8px solid #39a3db;
+
+    div.forecast 
+      min-height: 96px;
+      div
+        margin-top: auto;
+        margin-bottom: auto;
+      div.date
+        div.day
+          font-weight: bold;
+        div.hour
+          opacity: 0.5;
+          font-size: 14px;
+          font-style: italic;
+      
+      div.condition
+        font-size: 14px;
+        font-style: italic;
+
 
