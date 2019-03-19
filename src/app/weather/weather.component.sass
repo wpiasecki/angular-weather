@@ -1,93 +1,62 @@
-$lightBlue: #39A3DB;
-$placeholderColor: #888;
-
 @import "../../styles";
 
 div.header 
-	background-color: $lightBlue;
 	height: 300px;
-	width: 100%;
+	
+	div.search-input
+    padding-top: 88px;
 
-	div.search
-		text-align: center;
-		padding-top: 88px;
-		
-		p.title
-			font-size: 20px;
-			
-		input 
-			width: 460px;
-			height: 48px;
-			border: 0;
-			box-shadow: 0px 4px 8px 0 rgba(0,0,0,0.2);
-			border-radius: 4px;
-			padding-left: 16px;
-			
-			&::placeholder
-				color: $placeholderColor;
-				
-	div.result
-    position: absolute;
-    top: 220px;
-    z-index: 5;
-    margin-left: -15px;
-    width: 100%;
+div.result
+  position: absolute;
+  top: 220px;
+  z-index: 5;
+  width: 100%;
+  
+  div.city-card-container 
+    margin: auto;
     
-    div.city-card-container 
-      div.city-card
-        margin: auto;
-        height: 170px;
-        padding: 16px;
-        width: 620px;
-        border-radius: 4px;
-        margin-top: 16px;
-        background-color: white;
-        box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.1);
-        display: flex;
+    div.city-card
+      margin: auto;
+      height: 170px;
+      padding: 16px;
+      border-radius: 4px;
+      margin-top: 16px;
+      background-color: white;
+      box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      
+      div.temperature
+        text-align: center
+        line-height: 130px;
+        font-weight: bold;
+        color: #696969;
+        background-color: #f0f0f0;
+        font-size: 48px;
+
+      div.city-data
+        padding-left: 40px;
         
-        div.temperature
-          width: 200px;
-          text-align: center
-          line-height: 130px;
+        div.city-name
+          color: #39a3db;
+          font-size: 24px;
           font-weight: bold;
-          color: #696969;
-          background-color: #f0f0f0;
-          font-size: 48px;
-
-        div.city-data
-          flex-grow: 1;
-          padding-top: 16px;
-          padding-left: 40px;
-          
-          div.city-name
-            color: #39a3db;
-            font-size: 24px;
-            font-weight: bold;
-            width: 200px;
-          
-          div.temp
-            margin-top: 16px;
-            font-size: 14px;
-            div.temp-title
-              color: #9F9F9F;
-              width: 80px;
-              display: inline-block;
-            
-            span.max-temp
-              font-weight: bold;
-              color: #b30000;
-            
-            span.min-temp
-              font-weight: bold;
-              color: #4a90e2;
-
-        div.condition
-          width: 140px;
-          padding-top: 24px;
-          color: #3c3c3c;
+        
+        div.temp
+          margin-top: 16px;
           font-size: 14px;
-          font-style: italic;
-          text-align: center;
+          
+          div.temp-title
+            color: #9F9F9F;
+            display: inline-block;
+            padding: 0;
+
+
+      div.condition
+        padding-top: 24px;
+        color: #3c3c3c;
+        font-size: 14px;
+        font-style: italic;
+        text-align: center;
         
 
 p.title 
@@ -97,3 +66,4 @@ p.title
 
 div.lower-background
   background-color: $lightGray;
+  

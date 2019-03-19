@@ -1,7 +1,7 @@
-<div class="container-fluid h-100 d-flex flex-column">
+<div class="container-fluid h-100 d-flex flex-column main-container">
 	<div class="row">
 		<div class="header col">
-			<div class="search">
+			<div class="search-input">
 				<p class="title">Weather in your city</p>
 			  <input 
 			    type="text" 
@@ -9,31 +9,35 @@
 			    (keypress)="searchOnEnter($event)"
 			    placeholder="Your city name" />
 			</div>
-		  
-		  <div class="result">
-		    <div class="city-card-container">
+		</div>
+		
+		<div class="result row">
+		    <div class="city-card-container col-lg-8 col-xl-6 col-sm-1 col-md-1">
 		    
-		      <div class="city-card" *ngFor="let result of weatherResult">
-		        <div class="temperature">
+		      <div 
+		        class="city-card row" 
+		        *ngFor="let result of weatherResult"
+		        (click)="toDetails(result)">
+		        <div class="temperature col-4">
 		          {{ result.main.temp }}°C
 	          </div>
-		        <div class="city-data">
+		        <div class="city-data col-5">
 		          <div class="city-name">
 		            {{ result.name }}, {{ result.sys.country }}
 		            <img src="http://openweathermap.org/images/flags/{{ result.sys.country.toLowerCase() }}.png">
 		          </div>
 		          <div class="temp">
 		            <div>
-		              <div class="temp-title">Máx</div>
+		              <div class="temp-title col-4">Máx</div>
 		              <span class="max-temp">{{ result.main.temp_max }}</span>
 		            </div>
 		            <div>
-		              <div class="temp-title">Min</div>
+		              <div class="temp-title col-4">Min</div>
 		              <span class="min-temp">{{ result.main.temp_min }}</span>
 	              </div>
 		          </div>
 	          </div>
-		        <div class="condition">
+		        <div class="condition col-3">
 		          <div><img src="http://openweathermap.org/img/w/{{ result.weather[0].icon }}.png"></div>
 		          <div>{{ result.weather[0].description }}</div>
 	          </div>
@@ -41,11 +45,11 @@
 		    
 		    </div>
 			</div>
-		</div>
+		
+		
+		
 	</div>
 
-	<div class="row flex-grow-1 lower-background">
-	</div>
 
 </div>
 

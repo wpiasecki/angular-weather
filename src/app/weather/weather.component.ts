@@ -40,6 +40,10 @@ export class WeatherComponent implements OnInit {
     this.openWeatherMapService.searchCities(searchText)
       .subscribe( (result: any) => this.weatherResult = result.list );
   }
+  
+  toDetails(city) {
+    this.router.navigate(['/details', city.id]);
+  }
 
 }
 
