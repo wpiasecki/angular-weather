@@ -1,6 +1,6 @@
 # AngularWeather
 
-Projeto para pesquisa de cidades, clima e previsão do tempo na base OpenWeatherMap utilizando Angular 7.
+Projeto para pesquisa de cidades, clima e previsão do tempo na base OpenWeatherMap utilizando Angular 7 e Bootstrap 4.
 
 1) Tela inicial
 
@@ -14,5 +14,8 @@ Projeto para pesquisa de cidades, clima e previsão do tempo na base OpenWeather
 
 ![Previsão cidade](https://raw.githubusercontent.com/wpiasecki/angular-weather/master/prints/3forecast.png)
 
+4) Colunas do Bootstrap para telas menores
+
+![Tela menor](https://raw.githubusercontent.com/wpiasecki/angular-weather/master/prints/4responsive.png)
 
 Projeto gerado com [Angular CLI](https://github.com/angular/angular-cli) version 7.3.6.
