@@ -28,7 +28,7 @@
 	    <div class="row main-weather">
 	      <div class="temperature-weather col-lg-4 col-sm-12">
 	        <div class="temperature">
-	          {{ cityWeather.main.temp }}
+	          {{ cityWeather.main.temp }} °C
 	        </div>
 	        <div class="current-condition">
 	          <img src="http://openweathermap.org/img/w/{{ cityWeather.weather[0].icon }}.png">
@@ -38,19 +38,19 @@
 	      <div class="day-weather-data col-lg-8 col-sm-12">
 	        <div class="row">
 	          <div class="col-4">Máx</div>
-	          <span class="max-temp">{{ cityWeather.main.temp_max }}</span>
+	          <span class="max-temp">{{ cityWeather.main.temp_max }} °C</span>
 	        </div>
 	        <div class="row">
 	          <div class="col-4">Min</div>
-	          <span class="min-temp">{{ cityWeather.main.temp_min }}</span>
+	          <span class="min-temp">{{ cityWeather.main.temp_min }} °C</span>
           </div>
           <div class="row">
 	          <div class="col-4">Sunrise</div>
-	          <div>{{ cityWeather.sys.sunrise }}</div>
+	          <div>{{ cityWeather.sys.sunrise_dt.getHours() }}:{{ cityWeather.sys.sunrise_dt.getMinutes() }}</div>
           </div>
           <div class="row">
 	          <div class="col-4">Sunset</div>
-	          <div>{{ cityWeather.sys.sunset }}</div>
+	          <div>{{ cityWeather.sys.sunset_dt.getHours() }}:{{ cityWeather.sys.sunset_dt.getMinutes() }}</div>
           </div>
 	      </div>
 	    </div>
@@ -63,15 +63,15 @@
 	    <div class="forecast-wrapper">
 	      <div class="forecast row" *ngFor="let forecast of cityForecast.list">
 	        <div class="date col-lg-3 col-md-3 col-sm-6">
-	          <div class="day">{{ forecast.dt }}</div>
-	          <div class="hour">hour</div>
+	          <div class="day">{{ forecast.dt_day }}</div>
+	          <div class="hour">{{ forecast.dt_hour }}</div>
 	        </div>
 	        <div class="condition col-lg-5 col-md-3 col-sm-6">
 	          <img src="http://openweathermap.org/img/w/{{ forecast.weather[0].icon }}.png">
 	          {{ forecast.weather[0].description }}
 	        </div>
-	        <div class="max-temp col-lg-2 col-md-3 col-sm-6">{{ forecast.main.temp_max }}</div>
-	        <div class="min-temp col-lg-2 col-md-3 col-sm-6">{{ forecast.main.temp_min }}</div>
+	        <div class="max-temp col-lg-2 col-md-3 col-sm-6">{{ forecast.main.temp_max }} °C</div>
+	        <div class="min-temp col-lg-2 col-md-3 col-sm-6">{{ forecast.main.temp_min }} °C</div>
 	      </div>
 	    </div>
 	  </div>
