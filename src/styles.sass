@@ -3,6 +3,8 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 $lightGray: #F6F6F6;
+$lightBlue: #39A3DB;
+$placeholderColor: #888;
 
 *
 	font-family: 'Roboto';
@@ -10,3 +12,38 @@ $lightGray: #F6F6F6;
 html, body
 	height: 100%;
 	background-color: $lightGray;
+
+
+div.header 	
+  background-color: $lightBlue;
+  
+
+
+div.search-input
+	text-align: center;
+	
+	p.title
+		font-size: 20px;
+		
+	input 
+		width: 460px;
+		height: 48px;
+		border: 0;
+		box-shadow: 0px 4px 8px 0 rgba(0,0,0,0.2);
+		border-radius: 4px;
+		padding-left: 16px;
+		
+		&::placeholder
+			color: $placeholderColor;
+			
+div.main-container
+  background-color: $lightGray;
+  
+
+span.max-temp
+  font-weight: bold;
+  color: #b30000;
+
+span.min-temp
+  font-weight: bold;
+  color: #4a90e2;

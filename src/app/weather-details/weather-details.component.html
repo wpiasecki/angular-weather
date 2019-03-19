@@ -1,0 +1,65 @@
+<div class="container-fluid h-100 d-flex flex-column main-container">
+	<div class="row">
+		<div class="header col">
+		  <div class="back-button" onclick="window.history.back()"><</div>
+			<div class="search-input">
+			  <input 
+			    type="text" 
+			    [(ngModel)]="searchText"
+			    (keypress)="searchOnEnter($event)"
+			    placeholder="Your city name" />
+			</div>
+		</div>
+	</div>
+	
+	<div class="row city-name">
+	  <div class="col">
+	    <div class="name">
+	      Weather in {{ cityWeather.name }}, {{ cityWeather.sys.country }}
+	    </div>
+	    <div class="datetime">
+	      {{ cityWeather.dt }}
+	    </div>
+    </div>
+	</div>
+	
+	<div class="row main-forecast col-xl-6 col-lg-8 col-md-8 col-sm-12">
+	  <div class="col">
+	    <div class="row main-weather">
+	      <div class="col">
+	        <div class="current-temp col-4">
+	          {{ cityWeather.main.temp }}
+	        </div>
+	        <div class="current-condition">
+	          <div><img src="http://openweathermap.org/img/w/{{ cityWeather.weather[0].icon }}.png"></div>
+	          <div>{{ cityWeather.weather[0].description }}</div>
+	        </div>
+	      </div>
+	      <div class="day-weather-data col-8">
+	        <div>{{ cityWeather.main.temp_max }}</div>
+	        <div>{{ cityWeather.main.temp_min }}</div>
+	        <div>{{ cityWeather.sys.sunrise }}</div>
+	        <div>{{ cityWeather.sys.sunset }}</div>
+	      </div>
+	    </div>
+	      
+      <div class="forecast-title">
+        <span class="main">5 day weather forecast</span>
+        <span class="details">every 3 hours</span>
+      </div>
+	    
+	    <div class="forecast row" *ngFor="let forecast of cityForecast.list">
+	      <div class="date col-lg-3">
+	        <div class="day">{{ forecast.dt }}</div>
+	        <div class="hour"></div>
+	      </div>
+	      <div class="condition col-lg-5">
+	        <img src="http://openweathermap.org/img/w/{{ forecast.weather[0].icon }}.png">
+	        {{ forecast.weather[0].description }}
+	      </div>
+	      <span class="max-temp col-lg-2">{{ forecast.main.temp_max }}</span>
+	      <span class="min-temp col-lg-2">{{ forecast.main.temp_min }}</span>
+	    </div>
+	  </div>
+	</div>
+</div>

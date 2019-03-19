@@ -9,13 +9,15 @@ import { WeatherSearchComponent } from './weather-search/weather-search.componen
 import { WeatherResultComponent } from './weather-result/weather-result.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { WeatherDetailsComponent } from './weather-details/weather-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WeatherComponent,
     WeatherSearchComponent,
-    WeatherResultComponent
+    WeatherResultComponent,
+    WeatherDetailsComponent
   ],
   imports: [
     BrowserModule,
