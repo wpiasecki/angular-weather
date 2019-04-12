@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { WeatherComponent } from './weather/weather.component';
+import { CitySearchComponent } from './city-search/city-search.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { WeatherDetailsComponent } from './weather-details/weather-details.component';
@@ -12,7 +12,7 @@ import { WeatherDetailsComponent } from './weather-details/weather-details.compo
 @NgModule({
   declarations: [
     AppComponent,
-    WeatherComponent,
+    CitySearchComponent,
     WeatherDetailsComponent
   ],
   imports: [

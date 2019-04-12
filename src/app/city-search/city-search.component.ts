@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { OpenWeatherMapService } from '../open-weather-map.service';
+import { OpenWeatherMapService } from '../services/open-weather-map.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 const ENTER_KEYCODE = 13;
 
 @Component({
   selector: 'app-weather',
-  templateUrl: './weather.component.html',
-  styleUrls: ['./weather.component.sass']
+  templateUrl: './city-search.component.html',
+  styleUrls: ['./city-search.component.sass']
 })
-export class WeatherComponent implements OnInit {
+export class CitySearchComponent implements OnInit {
   
   weatherResult
   searchText = ''

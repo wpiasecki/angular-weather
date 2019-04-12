@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Router, ActivatedRoute } from '@angular/router';
-import { OpenWeatherMapService } from '../open-weather-map.service';
+import { OpenWeatherMapService } from '../services/open-weather-map.service';
 
 import * as moment from 'moment';
 
