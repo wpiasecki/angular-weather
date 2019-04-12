@@ -5,6 +5,8 @@ import { map } from 'rxjs/operators';
 import * as moment from 'moment';
 
 import * as CitySearchModel from '../city-search/city-search.model';
+import * as CityWeatherModel from '../city-weather-details/city-weather.model';
+import * as CityForecastModel from '../city-weather-details/city-forecast.model';
 
 const API_KEY = 'f9737a774919613c170f742c312fe822';
 
@@ -52,14 +54,16 @@ export class OpenWeatherMapService {
       .get<CitySearchModel.RootObject>(this.citiesSearchPath, this.createQueryParams({ q: searchText }));
   }
   
-  currentWeather(cityId) {
+  currentWeather(cityId): Observable<CityWeatherModel.RootObject> {
     const addSunset = map(r => this.addSunsetAndSunriseDate(r));
-    return this.http.get(this.currentWeatherPath, this.createQueryParams({ id: cityId })).pipe(addSunset);
+    return this.http
+      .get<CityWeatherModel.RootObject>(this.currentWeatherPath, this.createQueryParams({ id: cityId })).pipe(addSunset);
   }
   
-  forecast(cityId) {
+  forecast(cityId): Observable<CityForecastModel.RootObject> {
     const addForecast = map(r => this.addForecastDatetime(r));
-    return this.http.get(this.forecastPath, this.createQueryParams({ id: cityId })).pipe(addForecast);
+    return this.http
+      .get<CityForecastModel.RootObject>(this.forecastPath, this.createQueryParams({ id: cityId })).pipe(addForecast);
   }
   
 }
