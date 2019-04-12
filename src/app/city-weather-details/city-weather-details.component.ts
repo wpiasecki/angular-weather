@@ -9,10 +9,10 @@ const ENTER_KEYCODE = 13;
 
 @Component({
   selector: 'app-weather-details',
-  templateUrl: './weather-details.component.html',
-  styleUrls: ['./weather-details.component.sass']
+  templateUrl: './city-weather-details.component.html',
+  styleUrls: ['./city-weather-details.component.sass']
 })
-export class WeatherDetailsComponent implements OnInit {
+export class CityWeatherDetailsComponent implements OnInit {
   
   searchText = ''
   cityId
