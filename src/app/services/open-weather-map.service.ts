@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { of } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import * as moment from 'moment';
+
+import * as CitySearchModel from '../city-search/city-search.model';
 
 const API_KEY = 'f9737a774919613c170f742c312fe822';
 
@@ -45,8 +47,9 @@ export class OpenWeatherMapService {
     return result;
   }
   
-  searchCities(searchText) {
-    return this.http.get(this.citiesSearchPath, this.createQueryParams({ q: searchText }));
+  searchCities(searchText): Observable<CitySearchModel.RootObject> {
+    return this.http
+      .get<CitySearchModel.RootObject>(this.citiesSearchPath, this.createQueryParams({ q: searchText }));
   }
   
   currentWeather(cityId) {
